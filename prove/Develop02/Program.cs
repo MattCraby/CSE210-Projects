@@ -8,22 +8,26 @@ class Program
 
         int response = 0;
 
+        Journal Journal = new Journal();
+
         while (response != 5)
         {
             response = myMenu.ProcessMenu();
             switch(response)
             {
                 case 1:
-                    Console.WriteLine("create");
+                    Journal.CreateEntry();
                     break;
                 case 2:
-                    Console.WriteLine("Display");
+                    Journal.DisplayJournal();
                     break;
                 case 3:
-                    Console.WriteLine("Save");
+                    Console.Write("What do you want to save this as? ");
+                    Journal.WriteToFile(Console.ReadLine());
                     break;
                 case 4:
-                    Console.WriteLine("Write");
+                    Console.Write("Enter journal file name: ");
+                    Journal.ReadFromFile(Console.ReadLine());
                     break;
                 case 5:
                     Console.WriteLine("Quit");

@@ -2,7 +2,6 @@ using System.Net;
 
 class Menu
 {
-    
 
         public int ProcessMenu()
     {
