@@ -1,3 +1,4 @@
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 
 class Police: Person
@@ -10,4 +11,9 @@ class Police: Person
         _weapons = weapons;
     }
 
+
+    public string GetPoliceInformation()
+    {
+        return $"Weapons: {_weapons}, {GetPersonInformation()}";
+    }
 }

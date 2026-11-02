@@ -1,14 +1,28 @@
-﻿class Program
+﻿using System.ComponentModel;
+
+class Program
 {
     
     static void Main()
     {
         Person myPerson = new Person("Bob", "Floyd", 56, 238);
-
-        myPerson.DisplayPersonInformation();
+        Console.WriteLine(myPerson.GetPersonInformation());
 
         Police myPolice = new Police("Lance", "Bob", 34, 156, "Taser");
+        Console.WriteLine(myPolice.GetPoliceInformation());
 
-        myPolice.DisplayPersonInformation();
+        Doctor myDoctor = new Doctor("Billy", "Paine", 20,150, "Knife");
+        Console.WriteLine(myDoctor.GetDoctorInformation());
+
+        List<Person> myPeople = new List<Person>();
+
+        myPeople.Add(myPerson);
+        myPeople.Add(myDoctor);
+        myPeople.Add(myPolice);
+
+        foreach(Person person in myPeople)
+        {
+            Console.WriteLine(person.GetPersonInformation());
+        }
     }
 }
