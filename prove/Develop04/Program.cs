@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        BaseActivity activity = new BaseActivity();
+        activity.RunCountDownMessage("Get Ready", 5);
+        activity.DisplaySpinnerMessage("Yea", 20);
     }
 }
