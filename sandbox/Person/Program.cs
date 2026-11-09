@@ -1,18 +1,27 @@
-﻿using System.ComponentModel;
-
-class Program
+﻿class Program
 {
+
+    static void DisplayPersonInformation(Person person)
+    {
+        if(person is Doctor d)
+            Console.WriteLine(d.GetDoctorInformation());
+        else if (person is Police p)
+            Console.WriteLine(p.GetPoliceInformation());
+        else
+            Console.WriteLine(person.GetPersonInformation());
+        
+    }
     
     static void Main()
     {
         Person myPerson = new Person("Bob", "Floyd", 56, 238);
-        Console.WriteLine(myPerson.GetPersonInformation());
+        // Console.WriteLine(myPerson.GetPersonInformation());
 
         Police myPolice = new Police("Lance", "Bob", 34, 156, "Taser");
-        Console.WriteLine(myPolice.GetPoliceInformation());
+        // Console.WriteLine(myPolice.GetPoliceInformation());
 
         Doctor myDoctor = new Doctor("Billy", "Paine", 20,150, "Knife");
-        Console.WriteLine(myDoctor.GetDoctorInformation());
+        // Console.WriteLine(myDoctor.GetDoctorInformation());
 
         List<Person> myPeople = new List<Person>();
 
@@ -22,7 +31,10 @@ class Program
 
         foreach(Person person in myPeople)
         {
-            Console.WriteLine(person.GetPersonInformation());
+            DisplayPersonInformation(person);
         }
+        // {
+        //     Console.WriteLine(person.GetPersonInformation());
+        // }
     }
 }
