@@ -1,6 +1,3 @@
-using System.Reflection.Metadata.Ecma335;
-using System.Security.Cryptography;
-
 class Police: Person
 {
     private string _weapons;
@@ -12,8 +9,14 @@ class Police: Person
     }
 
 
-    public string GetPoliceInformation()
+    public override string GetPersonInformation()
     {
-        return $"Weapons: {_weapons}, {GetPersonInformation()}";
+        return $"Police: Weapons: {_weapons}, {base.GetPersonInformation()}";
+    }
+
+
+    public override double GetSalary()
+    {
+        return 80000;
     }
 }

@@ -1,5 +1,3 @@
-using System.Reflection.Metadata.Ecma335;
-using System.Security.Cryptography;
 
 class Doctor: Person
 {
@@ -12,8 +10,14 @@ class Doctor: Person
     }
 
 
-    public string GetDoctorInformation()
+    public override string GetPersonInformation()
     {
-        return $"Doctor Tools: {_tools}, {GetPersonInformation()}";
+        return $"Doctor Tools: {_tools}, {base.GetPersonInformation()}";
+    }
+
+
+    public override double GetSalary()
+    {
+        return 300000;
     }
 }
